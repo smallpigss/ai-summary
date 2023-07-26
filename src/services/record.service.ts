@@ -9,9 +9,10 @@ export class RecordService {
       appToken: process.env.APP_TOKEN,
       personalBaseToken: process.env.PERSONAL_BASE_TOKEN,
     });
-    const res = await client.base.appTableRecord.list({
+    const res = await client.base.appTableRecord.get({
       path: {
         table_id: body.tableId,
+        record_id: body.recordId,
       },
     });
     console.log(res);
