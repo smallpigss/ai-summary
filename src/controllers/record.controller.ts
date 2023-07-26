@@ -1,3 +1,4 @@
+import { FormDataRequest } from 'nestjs-form-data';
 import {
   Controller,
   Get,
@@ -17,6 +18,7 @@ import { RecordService } from '../services/record.service';
 export class RecordController {
   constructor(private readonly _recordService: RecordService) {}
   @Post()
+  @FormDataRequest()
   async newRecord(@Body() record: NewRecordDto) {
     return await this._recordService.newRecord(record);
   }
