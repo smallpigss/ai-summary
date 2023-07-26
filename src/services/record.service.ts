@@ -21,7 +21,7 @@ export class RecordService {
       },
     } = res;
     console.log(fields);
-    fields['手机号'] = '18888888888';
+    fields['手机号'] = '17701300975';
     const res1 = await client.base.appTableRecord.update({
       path: {
         table_id: body.tableId,
