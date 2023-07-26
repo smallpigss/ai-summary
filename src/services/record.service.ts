@@ -15,7 +15,12 @@ export class RecordService {
         record_id: body.recordId,
       },
     });
-    console.log(res);
+    const {
+      data: {
+        record: { fields },
+      },
+    } = res;
+    console.log(fields);
     console.log(body);
   }
 }
