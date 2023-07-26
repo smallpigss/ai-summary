@@ -22,9 +22,15 @@ export class RecordService {
     } = res;
     console.log(fields);
     fields['手机号'] = '18888888888';
-    const res1 = await client.base.appTableRecord.update(
-      JSON.parse(JSON.stringify(fields)),
-    );
+    const res1 = await client.base.appTableRecord.update({
+      path: {
+        table_id: body.tableId,
+        record_id: body.recordId,
+      },
+      data: {
+        fields: fields,
+      },
+    });
     console.log(res1);
     console.log(body);
   }
